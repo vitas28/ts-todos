@@ -1,0 +1,9 @@
+@mixin font($size, $weight, $style) {
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin borderBottom($h, $type, $color) {
+  border-bottom: $h $type $color;
+}

@@ -1,0 +1,119 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #8360c3;
+  background: linear-gradient(to right, #2ebf91, #8360c3);
+}
+
+button {
+  outline: 0;
+  cursor: pointer;
+}
+
+.empty-todo {
+  margin-top: 20px;
+}
+
+.title {
+  margin: 20px;
+  @include font(45px, 700, italic);
+}
+
+.wrapper {
+  background-color: #8360c3;
+  border: $border-wrapper;
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  width: $main-width;
+  margin: 80px auto;
+
+  .form {
+    width: 100%;
+    padding: 25px;
+    border-radius: $border-radius;
+    background-color: $todo-bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input {
+      margin-right: 5px;
+      background-color: inherit;
+      border: 0;
+      @include borderBottom(3px, solid, $form-item-color);
+      padding: 10px;
+      color: $form-item-color;
+      @include font(25px, 500, italic);
+
+      &:focus {
+        outline: 0;
+        @include borderBottom(3px, solid, $form-hover);
+      }
+    }
+
+    button {
+      @include font(18px, 400, normal);
+      color: #fff;
+      margin-top: 20px;
+      float: right;
+      font-size: 18px;
+      background-color: $form-item-color;
+      border-radius: $border-radius;
+      padding: 7px 15px;
+      transition: $transition;
+      
+      &:hover {
+        background-color: $form-hover;
+      }
+    }
+  }
+
+  .todos {
+    border-radius: $border-radius;
+    background-color: $todo-bg;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 100%;
+
+    .todo-item {
+      font-size: 25px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      border-radius: $border-radius;
+      transition: $transition;
+      
+      &:hover {
+        background-color: #a1a1ef;
+      }
+
+      button {
+        padding: 7px;
+        border-radius: 50px;
+        background-color: inherit;
+        transition: $transition;
+
+        &:hover {
+          background-color: #e70e0e;
+        }
+      }
+    }
+  }
+}
